@@ -1,0 +1,27 @@
+# Server settings  
+
+server:  
+  port: 8090  
+  address: 127.0.0.1
+  session-timeout: 30  
+  tomcat.max-threads: 0  
+  tomcat.uri-encoding: UTF-8  
+  
+spring:  
+ # HTTP ENCODING  
+  http:  
+        encoding.charset: UTF-8  
+        encoding.enable: true  
+        encoding.force: true 
+        
+  datasource:  
+    url: jdbc:oracle:thin:@10.211.55.4:1521:orcl
+    username: lottery
+    password: lottery
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    
+  mvc:  
+        view:  
+            prefix: /WEB-INF/jsp/  
+            suffix: .jsp      
+  
