@@ -13,12 +13,18 @@ spring:
         encoding.charset: UTF-8  
         encoding.enable: true  
         encoding.force: true 
-        
+       
+         
   datasource:  
-    url: jdbc:oracle:thin:@10.211.55.4:1521:orcl
-    username: lottery
-    password: lottery
+    url: jdbc:oracle:thin:@192.168.1.223:1521:orcl
+    username: springdemo
+    password: 1234
     driverClassName: oracle.jdbc.driver.OracleDriver
+    
+    
+#指定mybatis映射文件的地址
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
     
   mvc:  
         view:  
