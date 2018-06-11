@@ -30,6 +30,8 @@ public class HistoryDataController {
 		PageHelper.startPage(start,pageSize);  
 		return historyDataService.findAllBuleData();
 	}
+	
+	
 	@ApiOperation(value="保存信息", notes="保存接口")
 	@RequestMapping(value="/save",method = RequestMethod.PUT)
 	public @ResponseBody ResponseMessage insertUsersAction(SsqHistoryBlueDataBean ssqHistoryBlueDataBean){
