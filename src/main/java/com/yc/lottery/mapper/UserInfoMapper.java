@@ -9,4 +9,10 @@ import com.yc.lottery.bean.UserBean;
 public interface UserInfoMapper {
 
 	public List<UserBean> queryUserInfo(String id);
+	/**
+	 * 查询所有用户信息
+	 * @return
+	 */
+	public List<UserBean> queryUserInfoAll();
+	
 }

@@ -48,4 +48,10 @@ public class HistoryDataServiceImpl implements HistoryDataService
     {
         return historyBlueDataBeanMapper.findAllBuleData();
     }
+
+	@Override
+	public int insert(SsqHistoryBlueDataBean ssqHistoryBlueDataBean) {
+		int result =historyBlueDataBeanMapper.insert(ssqHistoryBlueDataBean);		
+		return result;
+	}
 }

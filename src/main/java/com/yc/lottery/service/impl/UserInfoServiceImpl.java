@@ -22,8 +22,14 @@ public class UserInfoServiceImpl implements UserInfoService{
 	@Transactional
 	public List<UserBean> queryUserInfo(String id) {		
 		List<UserBean> listBean = userInfoMapper.queryUserInfo(id);
-		System.out.println("UserInfoServiceImpl==="+listBean);
+		return listBean;
+	}
+	@Override
+	@Transactional
+	public List<UserBean> queryUserInfoAll() {
+		List<UserBean> listBean = userInfoMapper.queryUserInfoAll();
 		return listBean;
 	}
 
+	
 }

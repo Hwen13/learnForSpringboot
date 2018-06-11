@@ -8,5 +8,6 @@ import com.yc.lottery.bean.UserBean;
 public interface UserInfoService {
 	
 	public List<UserBean> queryUserInfo(String id);
+	public List<UserBean> queryUserInfoAll();
 
 }

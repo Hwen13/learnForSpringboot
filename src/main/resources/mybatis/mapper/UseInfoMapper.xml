@@ -16,4 +16,10 @@
     from userinfo
     where ID = #{id,jdbcType=VARCHAR}
   </select>
+  
+   <select id="queryUserInfoAll" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from userinfo
+  </select>
   </mapper>

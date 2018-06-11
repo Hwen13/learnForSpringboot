@@ -10,4 +10,6 @@ public interface HistoryDataService
     SsqHistoryBlueDataBean findBlueDataByPrimaryKey(String expect);
 
     List<SsqHistoryBlueDataBean> findAllBuleData();
+    
+    int insert(SsqHistoryBlueDataBean ssqHistoryBlueDataBean);
 }
