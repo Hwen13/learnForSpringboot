@@ -237,25 +237,6 @@ controller主要负责转发、service主要负责业务逻辑、dao主要是数
 
 ![](https://github.com/javanan/slife/blob/master/dec/8.jpg?raw=true)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# SpringBoot_Mybatis_Test
+SpringBoot、Mybatis基础环境搭建
 

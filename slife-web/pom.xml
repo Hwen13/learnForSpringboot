@@ -63,8 +63,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-
+<!-- 访问activiti模块 -->
+ <dependency>
+            <groupId>com.slife</groupId>
+            <artifactId>slife-activiti</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

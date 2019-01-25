@@ -36,12 +36,14 @@ public class ModelController {
     @GetMapping(value = "")
     public String list(org.springframework.ui.Model model, HttpServletRequest request) {
         model.addAttribute("url", request.getContextPath()+"/model/");
+        System.out.println(111111111);
         return "model/list";
     }
 
     @ApiOperation(value = "进入模型管理页面", notes = "进入模型管理页面")
     @GetMapping(value = "/insert")
     public String insert(org.springframework.ui.Model model, HttpServletRequest request) {
+    	System.out.println("2222222222");
         model.addAttribute("action", "insert");
         model.addAttribute("url", request.getContextPath() + "/model/");
         model.addAttribute("categories", "");
@@ -61,6 +63,7 @@ public class ModelController {
     @ResponseBody
     public String createModel(@RequestParam String name, @RequestParam String key,
                                @RequestParam String desc, @RequestParam String category) {
+    	System.out.println(444444444);
         if (null == name || null == key || null == category) {
             throw new SlifeException(HttpCodeEnum.INVALID_REQUEST);
         }

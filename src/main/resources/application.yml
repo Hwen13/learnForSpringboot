@@ -1,0 +1,33 @@
+# Server settings  
+
+server:  
+  port: 8090  
+  address: 127.0.0.1
+  session-timeout: 30  
+  tomcat.max-threads: 0  
+  tomcat.uri-encoding: UTF-8  
+  
+spring:  
+ # HTTP ENCODING  
+  http:  
+        encoding.charset: UTF-8  
+        encoding.enable: true  
+        encoding.force: true 
+       
+         
+  datasource:  
+    url: jdbc:oracle:thin:@192.168.1.223:1521:orcl
+    username: springdemo
+    password: 1234
+    driverClassName: oracle.jdbc.driver.OracleDriver
+    
+    
+#指定mybatis映射文件的地址
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+    
+  mvc:  
+        view:  
+            prefix: /WEB-INF/jsp/  
+            suffix: .jsp      
+  

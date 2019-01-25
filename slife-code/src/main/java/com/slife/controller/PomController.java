@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
 /**
  * Created by chen on 2017/12/28.
  * <p>
@@ -18,33 +19,44 @@ import java.io.IOException;
  * Describe:
  */
 @Controller
-@RequestMapping("/code/pom")
-public class PomController extends CodeBaseController{
+@RequestMapping("/code")
+public class PomController extends CodeBaseController {
 
-    @Autowired
-    private IPomService pomService;
+	@Autowired
+	private IPomService pomService;
 
-    /**
-     * 创建一个 pom项目
-     * @param response
-     * @param parentVersion
-     * @param artifactId
-     * @param pomName
-     * @param packageName
-     * @param description
-     * @throws IOException
-     */
-    @GetMapping("/create")
-    public void create( HttpServletResponse response,
-                        @RequestParam("parentVersion") String parentVersion,
-                        @RequestParam("artifactId") String artifactId,
-                        @RequestParam("pomName") String pomName,
-                        @RequestParam("packageName") String packageName,
-                        @RequestParam(value = "description",required = false) String description) throws IOException {
+	/**
+	 * 创建一个 pom项目
+	 * 
+	 * @param response
+	 * @param parentVersion
+	 * @param artifactId
+	 * @param pomName
+	 * @param packageName
+	 * @param description
+	 * @throws IOException
+	 */
+//	@GetMapping("/create")
+//	public void create(HttpServletResponse response, @RequestParam("parentVersion") String parentVersion,
+//			@RequestParam("artifactId") String artifactId, @RequestParam("pomName") String pomName,
+//			@RequestParam("packageName") String packageName,
+//			@RequestParam(value = "description", required = false) String description) throws IOException {
+//     System.out.println("===1212121");
+//		byte[] data = pomService.createMavenCode(parentVersion, artifactId, pomName, packageName, description);
+//		setResponseHead(response, data, artifactId);
+//		IOUtils.write(data, response.getOutputStream());
+//	}
+	
 
-        byte[] data = pomService.createMavenCode(parentVersion,artifactId,pomName,packageName,description);
-        setResponseHead(response,data,artifactId);
-        IOUtils.write(data, response.getOutputStream());
-    }
+	@GetMapping("/pom")
+	public void create(HttpServletResponse response,  
+			@RequestParam("artifactId") String artifactId, @RequestParam("pomName") String pomName,
+			@RequestParam("packageName") String packageName,
+			@RequestParam(value = "description", required = false) String description) throws IOException {
+        String parentVersion="1.1.0";   
+		byte[] data = pomService.createMavenCode(parentVersion, artifactId, pomName, packageName, description);
+		setResponseHead(response, data, artifactId);
+		IOUtils.write(data, response.getOutputStream());
+	}
 
 }
